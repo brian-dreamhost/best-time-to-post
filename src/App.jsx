@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <div className="bg-glow bg-grid min-h-screen">
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-12">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8 sm:py-12">
         <nav className="mb-8 text-sm text-galactic">
           <a href="https://seo-tools-tau.vercel.app/" className="text-azure hover:text-white transition-colors">Free Tools</a>
           <span className="mx-2 text-metal">/</span>
@@ -44,7 +44,7 @@ export default function App() {
                 <button
                   key={p.id}
                   onClick={() => setPlatform(p.id)}
-                  className={`px-3 py-1.5 rounded-lg border text-sm transition-colors ${platform === p.id ? 'border-azure bg-azure/10 text-azure' : 'border-metal/30 text-galactic hover:text-cloudy'}`}
+                  className={`px-3 py-2 min-h-[44px] rounded-lg border text-sm transition-colors ${platform === p.id ? 'border-azure bg-azure/10 text-azure' : 'border-metal/30 text-galactic hover:text-cloudy'}`}
                 >
                   {p.name}
                 </button>
@@ -57,7 +57,7 @@ export default function App() {
             <select
               value={industry}
               onChange={e => setIndustry(e.target.value)}
-              className="bg-midnight border border-metal/30 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-azure max-w-xs"
+              className="w-full max-w-xs bg-midnight border border-metal/30 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-azure"
             >
               {INDUSTRIES.map(i => (
                 <option key={i.id} value={i.id}>{i.name}</option>

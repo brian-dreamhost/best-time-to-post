@@ -15,11 +15,11 @@ export default function TopSlots({ platformId, industryId, timezone }) {
 
   return (
     <div className="card-gradient border border-metal/20 rounded-2xl p-6 flex flex-col gap-4 animate-fadeIn">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-3 flex-wrap">
         <h3 className="text-white font-semibold">Top 3 Recommended Slots</h3>
         <button
           onClick={handleCopy}
-          className="text-xs px-3 py-1.5 rounded-lg bg-azure/10 border border-azure/30 text-azure hover:bg-azure hover:text-white transition-colors"
+          className="text-xs px-3 py-2 min-h-[44px] rounded-lg bg-azure/10 border border-azure/30 text-azure hover:bg-azure hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-azure focus:ring-offset-2 focus:ring-offset-abyss"
         >
           {copied ? 'Copied!' : 'Copy Schedule'}
         </button>

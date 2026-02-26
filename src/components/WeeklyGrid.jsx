@@ -12,7 +12,7 @@ export default function WeeklyGrid({ platformId, industryId }) {
   const displayHours = HOURS.filter(h => h >= 6 && h <= 22);
 
   return (
-    <div className="card-gradient border border-metal/20 rounded-2xl p-4 sm:p-6 overflow-x-auto">
+    <div className="card-gradient border border-metal/20 rounded-2xl p-4 sm:p-6 overflow-x-auto" role="region" aria-label="Weekly posting heatmap">
       <div className="min-w-[600px]">
         {/* Header row */}
         <div className="grid mb-1" style={{ gridTemplateColumns: '3rem repeat(7, 1fr)' }}>
@@ -34,6 +34,7 @@ export default function WeeklyGrid({ platformId, industryId }) {
                 <div
                   key={d}
                   title={`${d} ${formatHour(h)}: ${['Avoid', 'Poor', 'OK', 'Good', 'Best'][score]}`}
+                  aria-label={`${d} ${formatHour(h)}: ${['Avoid', 'Poor', 'OK', 'Good', 'Best'][score]}`}
                   className={`mx-0.5 h-5 rounded-sm border ${CELL_COLORS[score]}`}
                 />
               );
