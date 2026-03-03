@@ -8,6 +8,11 @@ export default function App() {
   const [industry, setIndustry] = useState('general')
   const [timezone, setTimezone] = useState('your timezone')
 
+  const fillTestData = () => {
+    setPlatform('linkedin')
+    setIndustry('professional')
+  }
+
   useEffect(() => {
     try {
       setTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone)
@@ -16,7 +21,7 @@ export default function App() {
 
   return (
     <div className="bg-glow bg-grid min-h-screen">
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-8 sm:py-12">
+      <div className="relative z-10 max-w-[1600px] mx-auto px-4 py-8 sm:py-12">
         <nav className="mb-8 text-sm text-galactic">
           <a href="https://seo-tools-tau.vercel.app/" className="text-azure hover:text-white transition-colors">Free Tools</a>
           <span className="mx-2 text-metal">/</span>
@@ -33,6 +38,16 @@ export default function App() {
           <p className="text-cloudy text-lg max-w-2xl mx-auto">
             Select your platform and industry to get a visual weekly heatmap showing your best, good, and avoid time slots — based on 2025 engagement research, not a generic blog post.
           </p>
+        </div>
+
+        <div className="flex justify-end mb-4">
+          <button
+            type="button"
+            onClick={fillTestData}
+            className="px-3 py-1.5 text-xs font-mono bg-prince/20 text-prince border border-prince/30 rounded hover:bg-prince/30 transition-colors focus:outline-none focus:ring-2 focus:ring-prince focus:ring-offset-2 focus:ring-offset-abyss"
+          >
+            Fill Test Data
+          </button>
         </div>
 
         {/* Selectors */}
